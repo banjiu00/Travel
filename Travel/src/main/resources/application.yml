@@ -1,0 +1,26 @@
+spring:
+  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/travel
+    username: root
+    password: sa
+    hikari:
+      idle-timeout: 60000
+      maximum-pool-size: 30
+      minimum-idle: 10
+  thymeleaf:
+    cache: false
+
+server:
+  port: 8070
+  servlet:
+    context-path: / #项目的上下文路径
+
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:/mybatis/*.xml  #加载映射文件
+  type-aliases-package: com.web.entity        #别名搜索的包
+  configuration:
+    lazy-loading-enabled: true               #打开懒加载
+    aggressive-lazy-loading: false           #关闭积极懒加载
